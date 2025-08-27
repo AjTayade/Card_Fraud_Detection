@@ -18,6 +18,5 @@ COPY scaler.pkl .
 # Expose port 5000 to allow communication with the app
 EXPOSE 5000
 
-# Command to run the application when the container starts
-CMD ["python", "app.py"]
-
+# FIX: Command to run the Gunicorn server when the container starts
+CMD ["gunicorn", "app:app"]
