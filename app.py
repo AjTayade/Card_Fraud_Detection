@@ -16,6 +16,12 @@ except FileNotFoundError:
 # Define the feature names in the correct order
 feature_names = ['amt', 'lat', 'long', 'city_pop', 'unix_time', 'merch_lat', 'merch_long']
 
+# FIX: Add a root route to handle visitors to the main URL
+@app.route('/', methods=['GET'])
+def home():
+    """A simple welcome message to confirm the API is running."""
+    return "Credit Card Fraud Detection API is live."
+
 @app.route('/predict', methods=['POST'])
 def predict():
     """
